@@ -1,4 +1,5 @@
 import './global.css';
+import { ModeToggle, ThemeProvider } from '@jsfront/components';
 
 export const metadata = {
   title: 'Welcome to dashboard',
@@ -11,8 +12,29 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
-      <body>{children}</body>
+    <html lang="en" suppressHydrationWarning>
+      <body>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          <nav className="p-4 flex justify-between shadow-md border-b">
+            <ul className="flex gap-4">
+              <li>
+                <a href="/">Home</a>
+              </li>
+              <li>
+                <a href="/posts">Posts</a>
+              </li>
+            </ul>
+
+            <ModeToggle />
+          </nav>
+          <div className="container p-4">{children}</div>
+        </ThemeProvider>
+      </body>
     </html>
   );
 }
