@@ -35,3 +35,5 @@ export * from './lib/ui/tooltip';
 
 export * from './lib/theme-provider';
 export * from './lib/dark-mode-toggle';
+export * from './lib/title';
+export * from './lib/navigation';
