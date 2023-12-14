@@ -1,12 +1,16 @@
+import { Heading } from '@jsfront/components';
+
 export default async function Index() {
-  /*
-   * Replace the elements below with your own.
-   *
-   * Note: The corresponding styles are in the ./index.css file.
-   */
   return (
-    <>
-      <h1>Hello</h1>
-    </>
+    <div className="flex flex-col gap-4">
+      <Heading size="xl">Overview</Heading>
+
+      <p className="text-xl text-muted-foreground">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab, aut
+        commodi consectetur dolorem dolores, et fuga ipsum itaque laboriosam
+        magnam minima modi odio omnis perferendis praesentium qui sit tempora
+        voluptatibus.
+      </p>
+    </div>
   );
 }

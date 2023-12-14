@@ -1,5 +1,6 @@
 import './global.css';
 import { ModeToggle, ThemeProvider } from '@jsfront/components';
+import { Navigation } from '@jsfront/components';
 
 export const metadata = {
   title: 'Welcome to dashboard',
@@ -20,16 +21,13 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <nav className="p-4 flex justify-between shadow-md border-b">
-            <ul className="flex gap-4">
-              <li>
-                <a href="/">Home</a>
-              </li>
-              <li>
-                <a href="/posts">Posts</a>
-              </li>
-            </ul>
-
+          <nav className="sticky top-0 z-50 w-full bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 p-4 flex justify-between shadow-md border-b">
+            <Navigation
+              items={[
+                { label: 'Overview', href: '/', exact: true },
+                { label: 'Posts', href: '/posts' },
+              ]}
+            />
             <ModeToggle />
           </nav>
           <div className="container p-4">{children}</div>
